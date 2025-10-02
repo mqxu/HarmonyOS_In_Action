@@ -87,135 +87,189 @@ expect(() => { throw new Error(); }).assertThrowError();
 
 ## 二、项目中的测试示例
 
-### 2.1 测试 StringUtil
+### 2.1 Hypium 单元测试命名规范
 
-#### 被测试代码
+#### 命名规则（describe / it）
 
-`entry/src/main/ets/utils/StringUtil.ets`:
+Hypium 要求：
+
+- 只能使用 **字母 (a–z, A–Z)**、**数字 (0–9)**、**下划线 `_`**、**点号 `.`**
+- 必须 **以字母开头**
+- 不能有中文、空格或特殊字符
+
+所以推荐的风格是：
+
+1. `describe` 命名
+
+- 格式：`<ClassName>_Unit_Test`
+- 方法分组：`<methodName>_method`
+- 例如：
+  - `StringUtil_Unit_Test`
+  - `isEmpty_method`
+  - `capitalize_method`
+
+2. `it` 命名
+
+常用模式：`<输入条件>_should_<期望结果>`
+
+- 清晰表达测试的输入和预期
+- 一律英文小写，单词之间用 `_` 分隔
+
+示例：
+
+- `empty_string_should_return_true`
+- `null_should_return_false`
+- `whitespace_string_should_return_true`
+- `non_empty_string_should_return_false`
+- `lowercase_should_be_capitalized`
+- `already_capitalized_should_stay_same`
+- `string_starting_with_number_should_stay_same`
+
+#### 推荐命名模式表
+
+| 场景         | 命名模式                           | 示例                                     |
+| ------------ | ---------------------------------- | ---------------------------------------- |
+| 普通方法测试 | `<case>_should_<expected>`         | `null_should_return_true`                |
+| 边界值测试   | `<boundaryCase>_should_<expected>` | `empty_string_should_return_true`        |
+| 异常输入     | `<invalidInput>_should_<expected>` | `invalid_lang_should_return_boolean`     |
+| 正常输入     | `<validInput>_should_<expected>`   | `hello_should_return_false`              |
+| 特殊情况     | `<specialCase>_should_<expected>`  | `string_with_spaces_should_return_false` |
+| 状态保持     | `<input>_should_stay_same`         | `already_capitalized_should_stay_same`   |
+
+#### 示例对照（StringUtil）
+
 ```typescript
-export class StringUtil {
-  static isEmpty(str: string | null | undefined): boolean {
-    return str === null || str === undefined || str.trim().length === 0;
-  }
-
-  static isNotEmpty(str: string | null | undefined): boolean {
-    return !StringUtil.isEmpty(str);
-  }
-
-  static formatMessage(template: string, count: number): string {
-    return `${template} ${count}`;
-  }
-
-  static capitalize(str: string): string {
-    if (StringUtil.isEmpty(str)) {
-      return str;
-    }
-    return str.charAt(0).toUpperCase() + str.slice(1);
-  }
-}
+describe('StringUtil_Unit_Test', () => {
+  describe('isEmpty_method', () => {
+    it('empty_string_should_return_true', 0, () => { ... })
+    it('null_should_return_true', 0, () => { ... })
+    it('undefined_should_return_true', 0, () => { ... })
+    it('whitespace_string_should_return_true', 0, () => { ... })
+    it('non_empty_string_should_return_false', 0, () => { ... })
+    it('string_with_spaces_should_return_false', 0, () => { ... })
+  });
+});
 ```
 
-#### 测试代码
+> 总结：
+>
+> - `describe`：类名/方法名 + `_Unit_Test` 或 `_method`
+> - `it`：`<输入>_should_<输出>`，必要时 `_stay_same`
 
-`entry/src/test/LocalUnit.test.ets`:
+### 2.2 测试 StringUtil
+
+测试代码：`entry/src/test/LocalUnit.test.ets`
+
 ```typescript
 import { describe, it, expect } from '@ohos/hypium';
 import { StringUtil } from '../main/ets/utils/StringUtil';
 
 export default function stringUtilTest() {
-  describe('StringUtil 单元测试', () => {
-    describe('isEmpty 方法', () => {
-      it('空字符串应返回 true', () => {
+  describe('StringUtil_Unit_Test', () => {
+
+    // ================= isEmpty =================
+    describe('isEmpty_method', () => {
+      // 空字符串应返回 true
+      it('empty_string_should_return_true', 0, () => {
         expect(StringUtil.isEmpty('')).assertTrue();
       });
 
-      it('null 应返回 true', () => {
+      // null 应返回 true
+      it('null_should_return_true', 0, () => {
         expect(StringUtil.isEmpty(null)).assertTrue();
       });
 
-      it('undefined 应返回 true', () => {
+      // undefined 应返回 true
+      it('undefined_should_return_true', 0, () => {
         expect(StringUtil.isEmpty(undefined)).assertTrue();
       });
 
-      it('只包含空格的字符串应返回 true', () => {
+      // 只包含空格的字符串应返回 true
+      it('whitespace_string_should_return_true', 0, () => {
         expect(StringUtil.isEmpty('   ')).assertTrue();
       });
 
-      it('非空字符串应返回 false', () => {
+      // 非空字符串应返回 false
+      it('non_empty_string_should_return_false', 0, () => {
         expect(StringUtil.isEmpty('hello')).assertFalse();
       });
 
-      it('包含前后空格的非空字符串应返回 false', () => {
+      // 包含前后空格的非空字符串应返回 false
+      it('trimmed_string_should_return_false', 0, () => {
         expect(StringUtil.isEmpty('  hello  ')).assertFalse();
       });
     });
 
-    describe('isNotEmpty 方法', () => {
-      it('空字符串应返回 false', () => {
+    // ================= isNotEmpty =================
+    describe('isNotEmpty_method', () => {
+      it('empty_string_should_return_false', 0, () => {
         expect(StringUtil.isNotEmpty('')).assertFalse();
       });
 
-      it('null 应返回 false', () => {
+      it('null_should_return_false', 0, () => {
         expect(StringUtil.isNotEmpty(null)).assertFalse();
       });
 
-      it('非空字符串应返回 true', () => {
+      it('non_empty_string_should_return_true', 0, () => {
         expect(StringUtil.isNotEmpty('hello')).assertTrue();
       });
     });
 
-    describe('formatMessage 方法', () => {
-      it('应该正确格式化消息和计数', () => {
+    // ================= formatMessage =================
+    describe('formatMessage_method', () => {
+      it('should_format_message_with_count', 0, () => {
         const result = StringUtil.formatMessage('Hello', 5);
         expect(result).assertEqual('Hello 5');
       });
 
-      it('应该处理零值', () => {
+      it('should_handle_zero_value', 0, () => {
         const result = StringUtil.formatMessage('Count', 0);
-        expect(result).assertEqual('Count 0');
+        expect(result).assertEqual('Count');
       });
 
-      it('应该处理负数', () => {
+      it('should_handle_negative_value', 0, () => {
         const result = StringUtil.formatMessage('Value', -10);
         expect(result).assertEqual('Value -10');
       });
 
-      it('应该处理大数值', () => {
+      it('should_handle_large_value', 0, () => {
         const result = StringUtil.formatMessage('Total', 1000000);
         expect(result).assertEqual('Total 1000000');
       });
     });
 
-    describe('capitalize 方法', () => {
-      it('小写字母开头应该首字母大写', () => {
+    // ================= capitalize =================
+    describe('capitalize_method', () => {
+      it('lowercase_should_be_capitalized', 0, () => {
         expect(StringUtil.capitalize('hello')).assertEqual('Hello');
       });
 
-      it('已大写的字符串应保持不变', () => {
+      it('already_capitalized_should_stay_same', 0, () => {
         expect(StringUtil.capitalize('Hello')).assertEqual('Hello');
       });
 
-      it('空字符串应返回空字符串', () => {
+      it('empty_string_should_return_empty', 0, () => {
         expect(StringUtil.capitalize('')).assertEqual('');
       });
 
-      it('单个字符应正确大写', () => {
+      it('single_char_should_be_capitalized', 0, () => {
         expect(StringUtil.capitalize('a')).assertEqual('A');
       });
 
-      it('全大写字符串只改变首字母', () => {
+      it('all_uppercase_should_keep_uppercase', 0, () => {
         expect(StringUtil.capitalize('HELLO')).assertEqual('HELLO');
       });
 
-      it('数字开头的字符串应保持不变', () => {
+      it('string_starting_with_number_should_stay_same', 0, () => {
         expect(StringUtil.capitalize('123abc')).assertEqual('123abc');
       });
     });
   });
 }
+
 ```
 
-### 2.2 测试 I18nUtil
+### 2.3 测试 I18nUtil
 
 `entry/src/test/I18nUtil.test.ets`:
 ```typescript
@@ -596,7 +650,7 @@ hvigorw test --coverage
 
 报告位于:
 ```
-entry/build/reports/coverage/index.html
+entry/.test/default/outputs/test/reports
 ```
 
 示例:
@@ -619,7 +673,7 @@ All files               |   92.8  |   87.5   |   100   |   92.8
    ```typescript
    // ✅ 好: 清楚描述测试内容
    it('当输入为空字符串时应返回 true', () => {});
-
+   
    // ❌ 差: 不清楚测试什么
    it('test1', () => {});
    ```
@@ -629,10 +683,10 @@ All files               |   92.8  |   87.5   |   100   |   92.8
    it('测试描述', () => {
      // Arrange (准备): 设置测试数据
      const input = 'hello';
-
+   
      // Act (执行): 调用被测试方法
      const result = StringUtil.capitalize(input);
-
+   
      // Assert (断言): 验证结果
      expect(result).assertEqual('Hello');
    });
@@ -644,11 +698,11 @@ All files               |   92.8  |   87.5   |   100   |   92.8
    it('空字符串应返回 true', () => {
      expect(StringUtil.isEmpty('')).assertTrue();
    });
-
+   
    it('null 应返回 true', () => {
      expect(StringUtil.isEmpty(null)).assertTrue();
    });
-
+   
    // ❌ 差: 一个测试验证多个场景
    it('isEmpty 测试', () => {
      expect(StringUtil.isEmpty('')).assertTrue();
@@ -662,16 +716,16 @@ All files               |   92.8  |   87.5   |   100   |   92.8
    // ✅ 好: 使用 beforeEach 确保每个测试独立
    describe('测试套件', () => {
      let counter: number;
-
+   
      beforeEach(() => {
        counter = 0;  // 每个测试都重置
      });
-
+   
      it('测试 1', () => {
        counter++;
        expect(counter).assertEqual(1);
      });
-
+   
      it('测试 2', () => {
        expect(counter).assertEqual(0);  // 不受测试 1 影响
      });
@@ -684,11 +738,11 @@ All files               |   92.8  |   87.5   |   100   |   92.8
      it('应该处理零值', () => {
        expect(StringUtil.formatMessage('Count', 0)).assertEqual('Count 0');
      });
-
+   
      it('应该处理负数', () => {
        expect(StringUtil.formatMessage('Value', -10)).assertEqual('Value -10');
      });
-
+   
      it('应该处理大数值', () => {
        expect(StringUtil.formatMessage('Total', 1000000)).assertEqual('Total 1000000');
      });
@@ -703,7 +757,7 @@ All files               |   92.8  |   87.5   |   100   |   92.8
    it('应该调用 trim 方法', () => {
      // 不应该测试方法如何实现
    });
-
+   
    // ✅ 好: 测试行为
    it('应该忽略前后空格判断为空', () => {
      expect(StringUtil.isEmpty('   ')).assertTrue();
@@ -718,7 +772,7 @@ All files               |   92.8  |   87.5   |   100   |   92.8
      globalCounter++;
      expect(globalCounter).assertEqual(1);
    });
-
+   
    // ✅ 好: 使用局部变量
    it('测试', () => {
      let localCounter = 0;
@@ -733,7 +787,7 @@ All files               |   92.8  |   87.5   |   100   |   92.8
    it('异步测试', () => {
      asyncFunction();  // 忘记 await
    });
-
+   
    // ✅ 好: 正确处理异步
    it('异步测试', async () => {
      await asyncFunction();
@@ -809,5 +863,5 @@ All files               |   92.8  |   87.5   |   100   |   92.8
 ## 参考资料
 
 - [@ohos/hypium 官方文档](https://ohpm.openharmony.cn/#/cn/detail/@ohos%2Fhypium)
-- [HarmonyOS 测试指南](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_test_framework)
-- [单元测试最佳实践](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/test_best_practices)
+- [HarmonyOS 测试指南](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-test)
+- [单元测试最佳实践](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ut)

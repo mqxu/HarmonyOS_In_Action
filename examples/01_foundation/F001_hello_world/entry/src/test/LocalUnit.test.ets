@@ -4,75 +4,151 @@
  * See LICENSE file in the project root for full license information.
  */
 
-import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect } from '@ohos/hypium';
-import { StringUtil } from '../../../main/ets/utils/StringUtil';
+import { describe, it, expect } from '@ohos/hypium';
+import { StringUtil } from '../main/ets/utils/StringUtil';
 
-export default function localUnitTest() {
-  describe('StringUtil 工具类测试', () => {
-    // 所有测试用例开始前执行一次
-    beforeAll(() => {
-      console.info('开始 StringUtil 单元测试');
+export default function stringUtilTest() {
+  describe('StringUtil_Unit_Test', () => {
+
+    // ================= isEmpty =================
+    describe('isEmpty_method', () => {
+      // 空字符串应返回 true
+      it('empty_string_should_return_true', 0, () => {
+        expect(StringUtil.isEmpty('')).assertTrue();
+      });
+
+      // null 应返回 true
+      it('null_should_return_true', 0, () => {
+        expect(StringUtil.isEmpty(null)).assertTrue();
+      });
+
+      // undefined 应返回 true
+      it('undefined_should_return_true', 0, () => {
+        expect(StringUtil.isEmpty(undefined)).assertTrue();
+      });
+
+      // 只包含空格的字符串应返回 true
+      it('whitespace_string_should_return_true', 0, () => {
+        expect(StringUtil.isEmpty('   ')).assertTrue();
+      });
+
+      // 非空字符串应返回 false
+      it('non_empty_string_should_return_false', 0, () => {
+        expect(StringUtil.isEmpty('hello')).assertFalse();
+      });
+
+      // 包含前后空格的非空字符串应返回 false
+      it('trimmed_string_should_return_false', 0, () => {
+        expect(StringUtil.isEmpty('  hello  ')).assertFalse();
+      });
     });
 
-    // 所有测试用例结束后执行一次
-    afterAll(() => {
-      console.info('StringUtil 单元测试完成');
+    // ================= isNotEmpty =================
+    describe('isNotEmpty_method', () => {
+      it('empty_string_should_return_false', 0, () => {
+        expect(StringUtil.isNotEmpty('')).assertFalse();
+      });
+
+      it('null_should_return_false', 0, () => {
+        expect(StringUtil.isNotEmpty(null)).assertFalse();
+      });
+
+      it('non_empty_string_should_return_true', 0, () => {
+        expect(StringUtil.isNotEmpty('hello')).assertTrue();
+      });
     });
 
-    // 测试 isEmpty 方法
-    it('isEmpty 应该正确判断空字符串', 0, () => {
-      expect(StringUtil.isEmpty('')).assertTrue();
-      expect(StringUtil.isEmpty('   ')).assertTrue();
-      expect(StringUtil.isEmpty(null)).assertTrue();
-      expect(StringUtil.isEmpty(undefined)).assertTrue();
-      expect(StringUtil.isEmpty('hello')).assertFalse();
+    // ================= formatMessage =================
+    describe('formatMessage_method', () => {
+      it('should_format_message_with_count', 0, () => {
+        const result = StringUtil.formatMessage('Hello', 5);
+        expect(result).assertEqual('Hello 5');
+      });
+
+      it('should_handle_zero_value', 0, () => {
+        const result = StringUtil.formatMessage('Count', 0);
+        expect(result).assertEqual('Count');
+      });
+
+      it('should_handle_negative_value', 0, () => {
+        const result = StringUtil.formatMessage('Value', -10);
+        expect(result).assertEqual('Value -10');
+      });
+
+      it('should_handle_large_value', 0, () => {
+        const result = StringUtil.formatMessage('Total', 1000000);
+        expect(result).assertEqual('Total 1000000');
+      });
     });
 
-    // 测试 isNotEmpty 方法
-    it('isNotEmpty 应该正确判断非空字符串', 0, () => {
-      expect(StringUtil.isNotEmpty('hello')).assertTrue();
-      expect(StringUtil.isNotEmpty('  hello  ')).assertTrue();
-      expect(StringUtil.isNotEmpty('')).assertFalse();
-      expect(StringUtil.isNotEmpty('   ')).assertFalse();
-      expect(StringUtil.isNotEmpty(null)).assertFalse();
+    // ================= capitalize =================
+    describe('capitalize_method', () => {
+      it('lowercase_should_be_capitalized', 0, () => {
+        expect(StringUtil.capitalize('hello')).assertEqual('Hello');
+      });
+
+      it('already_capitalized_should_stay_same', 0, () => {
+        expect(StringUtil.capitalize('Hello')).assertEqual('Hello');
+      });
+
+      it('empty_string_should_return_empty', 0, () => {
+        expect(StringUtil.capitalize('')).assertEqual('');
+      });
+
+      it('single_char_should_be_capitalized', 0, () => {
+        expect(StringUtil.capitalize('a')).assertEqual('A');
+      });
+
+      it('all_uppercase_should_keep_uppercase', 0, () => {
+        expect(StringUtil.capitalize('HELLO')).assertEqual('HELLO');
+      });
+
+      it('string_starting_with_number_should_stay_same', 0, () => {
+        expect(StringUtil.capitalize('123abc')).assertEqual('123abc');
+      });
     });
 
-    // 测试 formatMessage 方法
-    it('formatMessage 应该正确格式化消息', 0, () => {
-      expect(StringUtil.formatMessage('Hello', 0)).assertEqual('Hello');
-      expect(StringUtil.formatMessage('Hello', 1)).assertEqual('Hello 1');
-      expect(StringUtil.formatMessage('Hello', 10)).assertEqual('Hello 10');
-      expect(StringUtil.formatMessage('HarmonyOS', 5)).assertEqual('HarmonyOS 5');
-    });
+    // ================= truncate =================
+    describe('truncate_method', () => {
+      // 字符串长度小于最大长度，应返回原字符串
+      it('string_shorter_than_max_should_return_original', 0, () => {
+        expect(StringUtil.truncate('hello', 10)).assertEqual('hello');
+      });
 
-    // 测试 truncate 方法
-    it('truncate 应该正确截断字符串', 0, () => {
-      expect(StringUtil.truncate('Hello', 10)).assertEqual('Hello');
-      expect(StringUtil.truncate('Hello World', 5)).assertEqual('Hello...');
-      expect(StringUtil.truncate('HarmonyOS', 6)).assertEqual('Harmon...');
-      expect(StringUtil.truncate('', 5)).assertEqual('');
-    });
+      // 字符串长度等于最大长度，应返回原字符串
+      it('string_equal_to_max_should_return_original', 0, () => {
+        expect(StringUtil.truncate('hello', 5)).assertEqual('hello');
+      });
 
-    // 测试 capitalize 方法
-    it('capitalize 应该正确转换首字母大写', 0, () => {
-      expect(StringUtil.capitalize('hello')).assertEqual('Hello');
-      expect(StringUtil.capitalize('harmonyOS')).assertEqual('HarmonyOS');
-      expect(StringUtil.capitalize('HELLO')).assertEqual('HELLO');
-      expect(StringUtil.capitalize('')).assertEqual('');
-      expect(StringUtil.capitalize('h')).assertEqual('H');
-    });
+      // 字符串长度大于最大长度，应截断并加省略号
+      it('string_longer_than_max_should_truncate', 0, () => {
+        expect(StringUtil.truncate('hello world', 5)).assertEqual('hello...');
+      });
 
-    // 综合测试
-    it('综合场景测试', 0, () => {
-      const message = 'hello harmonyos';
-      const formatted = StringUtil.capitalize(message);
-      expect(formatted).assertEqual('Hello harmonyos');
+      // 空字符串应返回空字符串
+      it('empty_string_should_return_empty', 0, () => {
+        expect(StringUtil.truncate('', 5)).assertEqual('');
+      });
 
-      const longMessage = 'This is a very long message that needs to be truncated';
-      const truncated = StringUtil.truncate(longMessage, 20);
-      expect(truncated).assertEqual('This is a very long ...');
+      // 最大长度为0，应返回省略号
+      it('max_length_zero_should_return_ellipsis', 0, () => {
+        expect(StringUtil.truncate('hello', 0)).assertEqual('...');
+      });
 
-      expect(StringUtil.isNotEmpty(formatted)).assertTrue();
+      // 最大长度为1
+      it('max_length_one_should_return_first_char_with_ellipsis', 0, () => {
+        expect(StringUtil.truncate('hello', 1)).assertEqual('h...');
+      });
+
+      // 中文字符串截断
+      it('chinese_string_should_truncate_correctly', 0, () => {
+        expect(StringUtil.truncate('你好世界欢迎来到鸿蒙', 4)).assertEqual('你好世界...');
+      });
+
+      // 混合字符串截断
+      it('mixed_string_should_truncate_correctly', 0, () => {
+        expect(StringUtil.truncate('hello你好world', 8)).assertEqual('hello你好wo...');
+      });
     });
   });
 }

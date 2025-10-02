@@ -1,20 +1,6 @@
 {
   "app": {
-    "signingConfigs": [
-      {
-        "name": "default",
-        "type": "HarmonyOS",
-        "material": {
-          "certpath": "/Users/moqi/.ohos/config/default_F001_hello_world_x4_TriRQp5KNtUEqTM0qqzQ8VY4eIT6JimLJnyobMrU=.cer",
-          "keyAlias": "debugKey",
-          "keyPassword": "0000001B93C02EE219C47B5903323049B331B4F906CE60823D61E1B451BB545A856C224C806BBBBEA7BEDB",
-          "profile": "/Users/moqi/.ohos/config/default_F001_hello_world_x4_TriRQp5KNtUEqTM0qqzQ8VY4eIT6JimLJnyobMrU=.p7b",
-          "signAlg": "SHA256withECDSA",
-          "storeFile": "/Users/moqi/.ohos/config/default_F001_hello_world_x4_TriRQp5KNtUEqTM0qqzQ8VY4eIT6JimLJnyobMrU=.p12",
-          "storePassword": "0000001B67274E58BD6C58391BC2EEDF975F21028A68C0111EB46C89740CC0B47821D5FD9EAF77260D24AF"
-        }
-      }
-    ],
+    "signingConfigs": [],
     "products": [
       {
         "name": "default",
