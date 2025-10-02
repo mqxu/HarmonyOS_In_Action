@@ -68,15 +68,27 @@
 
    访问 [DevEco Studio 官网](https://developer.huawei.com/consumer/cn/deveco-studio/) 下载并安装
 
-2. **配置环境变量**（可选，方便命令行使用）
+2. **配置环境变量**（推荐，极大提升开发效率）
+
+   将以下内容添加到 `~/.zshrc` 或 `~/.bashrc`：
 
    ```bash
-   # 将鸿蒙工具链添加到 PATH
+   # DevEco Studio 和鸿蒙 SDK
    export DEVECO_HOME="/Applications/DevEco-Studio.app/Contents"
    export HARMONY_SDK="$DEVECO_HOME/sdk/default"
+
+   # 工具链
    export PATH="$HARMONY_SDK/openharmony/toolchains:$PATH"
    export PATH="$DEVECO_HOME/tools/ohpm/bin:$PATH"
+   export PATH="$DEVECO_HOME/tools/hvigor/bin:$PATH"
+
+   # 快捷别名
+   alias cde='cd $HARMONY_SDK/openharmony/ets/build-tools/ets-loader'
+   alias cdets='cd $HARMONY_SDK/openharmony/ets'
+   alias cdhms='cd $HARMONY_SDK/hms/ets'
    ```
+
+   配置后执行：`source ~/.zshrc`
 
 3. **克隆项目**
 
@@ -374,6 +386,7 @@ HarmonyOS_In_Action/
 ---
 
 <div align="center">
+
 **如果这个项目对你有帮助，请给一个 ⭐ Star 支持我！**
 
 Made with ❤️ by mqxu

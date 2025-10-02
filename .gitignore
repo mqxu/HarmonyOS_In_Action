@@ -41,3 +41,6 @@ coverage/
 # IDE
 .vscode/
 *.code-workspace
+
+# Claude Code 项目配置（本地专用，不提交到远程）
+CLAUDE.md
