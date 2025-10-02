@@ -1,0 +1,16 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "F001 Hello HarmonyOS 示例模块"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "F001 Hello HarmonyOS 应用入口"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "Hello HarmonyOS"
+    }
+  ]
+}

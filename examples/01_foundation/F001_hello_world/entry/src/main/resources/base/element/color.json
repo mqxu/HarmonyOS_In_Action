@@ -1,0 +1,112 @@
+{
+  "color": [
+    {
+      "name": "start_window_background",
+      "value": "#FFFFFF"
+    },
+    {
+      "name": "primary_blue_light",
+      "value": "#007DFF"
+    },
+    {
+      "name": "primary_blue_dark",
+      "value": "#1890ff"
+    },
+    {
+      "name": "success_green",
+      "value": "#52c41a"
+    },
+    {
+      "name": "danger_red_light",
+      "value": "#ff4d4f"
+    },
+    {
+      "name": "danger_red_dark",
+      "value": "#ff6b6b"
+    },
+    {
+      "name": "text_primary_light",
+      "value": "#333333"
+    },
+    {
+      "name": "text_primary_dark",
+      "value": "#ffffff"
+    },
+    {
+      "name": "text_secondary_light",
+      "value": "#666666"
+    },
+    {
+      "name": "text_secondary_dark",
+      "value": "#cccccc"
+    },
+    {
+      "name": "text_tertiary_light",
+      "value": "#999999"
+    },
+    {
+      "name": "text_tertiary_dark",
+      "value": "#666666"
+    },
+    {
+      "name": "bg_page_light",
+      "value": "#F5F5F5"
+    },
+    {
+      "name": "bg_page_dark",
+      "value": "#121212"
+    },
+    {
+      "name": "bg_card_light",
+      "value": "#f0f0f0"
+    },
+    {
+      "name": "bg_card_dark",
+      "value": "#1f1f1f"
+    },
+    {
+      "name": "bg_input_light",
+      "value": "#ffffff"
+    },
+    {
+      "name": "bg_input_dark",
+      "value": "#2c2c2c"
+    },
+    {
+      "name": "placeholder_light",
+      "value": "#999999"
+    },
+    {
+      "name": "placeholder_dark",
+      "value": "#666666"
+    },
+    {
+      "name": "shadow_primary",
+      "value": "#007DFF40"
+    },
+    {
+      "name": "shadow_danger",
+      "value": "#ff4d4f40"
+    },
+    {
+      "name": "shadow_success",
+      "value": "#52c41a40"
+    },
+    {
+      "name": "shadow_card_light",
+      "value": "#00000010"
+    },
+    {
+      "name": "shadow_card_dark",
+      "value": "#00000040"
+    },
+    {
+      "name": "shadow_image_light",
+      "value": "#00000020"
+    },
+    {
+      "name": "shadow_image_dark",
+      "value": "#007DFF40"
+    }
+  ]
+}
