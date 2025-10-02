@@ -1,6 +1,9 @@
 # HarmonyOS_In_Action
 
 <div align="center">
+
+<img src="docs/images/logo.svg" alt="HarmonyOS In Action Logo" width="150" height="150" />
+
 **鸿蒙开发实战案例库 - 全面覆盖 OpenHarmony 和 HMS API**
 
 [![HarmonyOS](https://img.shields.io/badge/HarmonyOS-6.0.0-blue)](https://developer.huawei.com/consumer/cn/harmonyos/)
