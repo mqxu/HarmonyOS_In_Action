@@ -1,0 +1,43 @@
+# DevEco Studio
+.idea/
+*.iml
+*.ipr
+*.iws
+.gradle/
+local.properties
+
+# Build outputs
+build/
+node_modules/
+oh_modules/
+.hvigor/
+*.hap
+*.app
+*.hsp
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Test coverage
+coverage/
+.nyc_output/
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*~
+.cache/
+
+# Environment variables
+.env
+.env.local
+
+# IDE
+.vscode/
+*.code-workspace
