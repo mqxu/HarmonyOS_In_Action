@@ -1,0 +1,16 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "列表渲染与优化模块"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "列表渲染案例应用入口"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "列表渲染"
+    }
+  ]
+}

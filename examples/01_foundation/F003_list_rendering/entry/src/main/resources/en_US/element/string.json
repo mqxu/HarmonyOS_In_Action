@@ -1,0 +1,16 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "List Rendering and Optimization Module"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "List Rendering Example Entry"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "List Rendering"
+    }
+  ]
+}
