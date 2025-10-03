@@ -1,0 +1,68 @@
+{
+  "string": [
+    {
+      "name": "hello_message",
+      "value": "Hello HarmonyOS"
+    },
+    {
+      "name": "current_count",
+      "value": "Count: %s"
+    },
+    {
+      "name": "input_custom_message",
+      "value": "Enter custom message..."
+    },
+    {
+      "name": "features_title",
+      "value": "✨ Features"
+    },
+    {
+      "name": "feature_persistence",
+      "value": "• Data Persistence: Auto-save count & theme"
+    },
+    {
+      "name": "feature_custom",
+      "value": "• Custom Message: Personalized text"
+    },
+    {
+      "name": "feature_dark_mode",
+      "value": "• Dark Mode: Protect your eyes"
+    },
+    {
+      "name": "feature_animation",
+      "value": "• Animation: Smooth interaction"
+    },
+    {
+      "name": "light_mode",
+      "value": "☀️ Light"
+    },
+    {
+      "name": "dark_mode",
+      "value": "🌙 Dark"
+    },
+    {
+      "name": "version_info",
+      "value": "HarmonyOS 6.0.0 (API 20)"
+    },
+    {
+      "name": "btn_increment",
+      "value": "➕"
+    },
+    {
+      "name": "btn_decrement",
+      "value": "➖"
+    },
+    {
+      "name": "btn_reset",
+      "value": "🔄"
+    },
+    {
+      "name": "language_chinese",
+      "value": "🇨🇳 中文"
+    },
+    {
+      "name": "language_english",
+      "value": "🇺🇸 English"
+    }
+  ]
+}

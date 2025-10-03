@@ -1,0 +1,68 @@
+{
+  "string": [
+    {
+      "name": "hello_message",
+      "value": "Hello HarmonyOS"
+    },
+    {
+      "name": "current_count",
+      "value": "当前计数: %s"
+    },
+    {
+      "name": "input_custom_message",
+      "value": "输入自定义消息..."
+    },
+    {
+      "name": "features_title",
+      "value": "✨ 功能特性"
+    },
+    {
+      "name": "feature_persistence",
+      "value": "• 数据持久化：自动保存计数和主题"
+    },
+    {
+      "name": "feature_custom",
+      "value": "• 自定义消息：支持个性化文本"
+    },
+    {
+      "name": "feature_dark_mode",
+      "value": "• 深色模式：保护您的眼睛"
+    },
+    {
+      "name": "feature_animation",
+      "value": "• 动画效果：流畅的交互体验"
+    },
+    {
+      "name": "light_mode",
+      "value": "☀️ 浅色模式"
+    },
+    {
+      "name": "dark_mode",
+      "value": "🌙 深色模式"
+    },
+    {
+      "name": "version_info",
+      "value": "HarmonyOS 6.0.0 (API 20)"
+    },
+    {
+      "name": "btn_increment",
+      "value": "➕"
+    },
+    {
+      "name": "btn_decrement",
+      "value": "➖"
+    },
+    {
+      "name": "btn_reset",
+      "value": "🔄"
+    },
+    {
+      "name": "language_chinese",
+      "value": "🇨🇳 中文"
+    },
+    {
+      "name": "language_english",
+      "value": "🇺🇸 English"
+    }
+  ]
+}

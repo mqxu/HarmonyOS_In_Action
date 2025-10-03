@@ -1,0 +1,16 @@
+{
+  "string": [
+    {
+      "name": "module_test_desc",
+      "value": "F001 Hello HarmonyOS 测试模块"
+    },
+    {
+      "name": "TestAbility_desc",
+      "value": "F001 测试应用入口"
+    },
+    {
+      "name": "TestAbility_label",
+      "value": "测试"
+    }
+  ]
+}

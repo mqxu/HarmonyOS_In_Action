@@ -1,0 +1,12 @@
+{
+  "name": "f002-state-management",
+  "version": "1.0.0",
+  "description": "HarmonyOS 状态管理进阶案例 - 深入学习 @State、@Prop、@Link、@Watch、@Provide、@Consume 装饰器的使用",
+  "modelVersion": "6.0.0",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "@ohos/hypium": "1.0.24",
+    "@ohos/hamock": "1.0.0"
+  }
+}
