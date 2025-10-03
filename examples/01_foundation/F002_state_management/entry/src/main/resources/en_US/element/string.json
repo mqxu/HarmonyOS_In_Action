@@ -1,0 +1,92 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "F002 State Management Module"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "F002 State Management Demo App Entry"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "State Mgmt"
+    },
+    {
+      "name": "welcome_message",
+      "value": "Welcome to State Management"
+    },
+    {
+      "name": "global_state",
+      "value": "Global State (@State)"
+    },
+    {
+      "name": "prop_demo",
+      "value": "Child Component Props (@Prop)"
+    },
+    {
+      "name": "link_demo",
+      "value": "Two-way Binding (@Link)"
+    },
+    {
+      "name": "provide_consume_demo",
+      "value": "Cross-level Sharing (@Provide/@Consume)"
+    },
+    {
+      "name": "expand_advanced",
+      "value": "Expand Advanced Examples ▼"
+    },
+    {
+      "name": "collapse_advanced",
+      "value": "Collapse Advanced Examples ▲"
+    },
+    {
+      "name": "button_increment",
+      "value": "Increment"
+    },
+    {
+      "name": "button_decrement",
+      "value": "Decrement"
+    },
+    {
+      "name": "button_reset",
+      "value": "Reset"
+    },
+    {
+      "name": "button_sync",
+      "value": "Sync"
+    },
+    {
+      "name": "parent_value",
+      "value": "Parent Value"
+    },
+    {
+      "name": "local_value",
+      "value": "Local Value"
+    },
+    {
+      "name": "current_sync_value",
+      "value": "Current Sync Value"
+    },
+    {
+      "name": "shared_count",
+      "value": "Shared Count"
+    },
+    {
+      "name": "shared_text",
+      "value": "Shared Text"
+    },
+    {
+      "name": "prop_description",
+      "value": "Note: @Prop is one-way, local changes don't affect parent"
+    },
+    {
+      "name": "link_description",
+      "value": "Note: @Link is two-way, child changes sync to parent"
+    },
+    {
+      "name": "provide_consume_description",
+      "value": "Note: @Provide/@Consume can pass state across levels"
+    }
+  ]
+}

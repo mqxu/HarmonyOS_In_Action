@@ -1,0 +1,100 @@
+{
+  "color": [
+    {
+      "name": "start_window_background",
+      "value": "#FFFFFF"
+    },
+    {
+      "name": "primary_blue",
+      "value": "#1890FF"
+    },
+    {
+      "name": "danger_red",
+      "value": "#FF6B6B"
+    },
+    {
+      "name": "success_green",
+      "value": "#51CF66"
+    },
+    {
+      "name": "warning_orange",
+      "value": "#FFC107"
+    },
+    {
+      "name": "purple",
+      "value": "#9C27B0"
+    },
+    {
+      "name": "deep_purple",
+      "value": "#673AB7"
+    },
+    {
+      "name": "indigo",
+      "value": "#3F51B5"
+    },
+    {
+      "name": "teal",
+      "value": "#009688"
+    },
+    {
+      "name": "pink",
+      "value": "#E91E63"
+    },
+    {
+      "name": "light_green",
+      "value": "#4CAF50"
+    },
+    {
+      "name": "orange",
+      "value": "#FF9800"
+    },
+    {
+      "name": "light_blue",
+      "value": "#2196F3"
+    },
+    {
+      "name": "deep_orange",
+      "value": "#FF5722"
+    },
+    {
+      "name": "text_primary",
+      "value": "#333333"
+    },
+    {
+      "name": "text_secondary",
+      "value": "#666666"
+    },
+    {
+      "name": "text_tertiary",
+      "value": "#999999"
+    },
+    {
+      "name": "bg_page",
+      "value": "#F0F2F5"
+    },
+    {
+      "name": "bg_card",
+      "value": "#FFFFFF"
+    },
+    {
+      "name": "bg_light_gray",
+      "value": "#F5F5F5"
+    },
+    {
+      "name": "bg_medium_gray",
+      "value": "#F0F0F0"
+    },
+    {
+      "name": "bg_orange_light",
+      "value": "#FFF3E0"
+    },
+    {
+      "name": "bg_blue_light",
+      "value": "#E3F2FD"
+    },
+    {
+      "name": "shadow_color",
+      "value": "#00000010"
+    }
+  ]
+}

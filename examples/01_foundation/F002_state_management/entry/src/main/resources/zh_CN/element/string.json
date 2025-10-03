@@ -1,0 +1,92 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "F002 状态管理进阶模块"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "F002 状态管理进阶案例应用入口"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "状态管理"
+    },
+    {
+      "name": "welcome_message",
+      "value": "欢迎学习状态管理"
+    },
+    {
+      "name": "global_state",
+      "value": "全局状态 (@State)"
+    },
+    {
+      "name": "prop_demo",
+      "value": "子组件状态传递 (@Prop)"
+    },
+    {
+      "name": "link_demo",
+      "value": "双向同步 (@Link)"
+    },
+    {
+      "name": "provide_consume_demo",
+      "value": "跨层级状态共享 (@Provide/@Consume)"
+    },
+    {
+      "name": "expand_advanced",
+      "value": "展开高级示例 ▼"
+    },
+    {
+      "name": "collapse_advanced",
+      "value": "收起高级示例 ▲"
+    },
+    {
+      "name": "button_increment",
+      "value": "增加"
+    },
+    {
+      "name": "button_decrement",
+      "value": "减少"
+    },
+    {
+      "name": "button_reset",
+      "value": "重置"
+    },
+    {
+      "name": "button_sync",
+      "value": "同步"
+    },
+    {
+      "name": "parent_value",
+      "value": "父组件值"
+    },
+    {
+      "name": "local_value",
+      "value": "本地值"
+    },
+    {
+      "name": "current_sync_value",
+      "value": "当前同步值"
+    },
+    {
+      "name": "shared_count",
+      "value": "共享计数"
+    },
+    {
+      "name": "shared_text",
+      "value": "共享文本"
+    },
+    {
+      "name": "prop_description",
+      "value": "说明: @Prop 只能单向接收，本地修改不影响父组件"
+    },
+    {
+      "name": "link_description",
+      "value": "说明: @Link 双向绑定，子组件修改会同步到父组件"
+    },
+    {
+      "name": "provide_consume_description",
+      "value": "说明: @Provide/@Consume 可跨层级传递状态，无需逐层传递"
+    }
+  ]
+}
