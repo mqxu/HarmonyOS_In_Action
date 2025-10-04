@@ -1,0 +1,26 @@
+# GitHub Linguist 语言统计配置
+# 排除不需要统计的目录和文件
+
+# 排除 SDK 目录（如果存在）
+sdk/** linguist-vendored
+
+# 排除依赖目录
+**/node_modules/** linguist-vendored
+**/oh_modules/** linguist-vendored
+
+# 排除构建产物
+**/build/** linguist-vendored
+**/dist/** linguist-vendored
+**/.preview/** linguist-vendored
+
+# 排除测试文件目录（可选）
+# **/test/** linguist-vendored
+# **/ohosTest/** linguist-vendored
+
+# 标记主要开发语言
+*.ets linguist-language=TypeScript
+*.ts linguist-language=TypeScript
+*.js linguist-language=JavaScript
+
+# 文档文件
+*.md linguist-documentation
