@@ -1,12 +1,26 @@
 {
   app: {
-    signingConfigs: [],
+    signingConfigs: [
+      {
+        "name": "default",
+        "type": "HarmonyOS",
+        "material": {
+          "certpath": "/Users/moqi/.ohos/config/default_F003_list_rendering_nmOO6gYc5E20xFKew7gv4JI5aiV-z60HkqWzBWRAzsE=.cer",
+          "keyAlias": "debugKey",
+          "keyPassword": "0000001B27FF5B5619698A6703FF9F7DC34A18572D852E573F4D6309860DF4AED9E1FD51B6FA60D4BC7E74",
+          "profile": "/Users/moqi/.ohos/config/default_F003_list_rendering_nmOO6gYc5E20xFKew7gv4JI5aiV-z60HkqWzBWRAzsE=.p7b",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "/Users/moqi/.ohos/config/default_F003_list_rendering_nmOO6gYc5E20xFKew7gv4JI5aiV-z60HkqWzBWRAzsE=.p12",
+          "storePassword": "0000001BDF2AE04F0915FE88FA8268695BEE9A2A94CD9CB698F4E5F0AD2B0BE92C6E59566B5CF012F328D6"
+        }
+      }
+    ],
     products: [
       {
         name: "default",
         signingConfig: "default",
         targetSdkVersion: "6.0.0(20)",
-        compatibleSdkVersion: "6.0.0(20)",
+        compatibleSdkVersion: "5.0.5(17)",
         runtimeOS: "HarmonyOS",
         buildOption: {
           strictMode: {
@@ -32,7 +46,9 @@
       targets: [
         {
           name: "default",
-          applyToProducts: ["default"],
+          applyToProducts: [
+            "default"
+          ],
         },
       ],
     },
