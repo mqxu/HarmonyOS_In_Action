@@ -1,0 +1,16 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "Custom Components Module"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "Custom Components Example Entry"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "CustomComponents"
+    }
+  ]
+}
