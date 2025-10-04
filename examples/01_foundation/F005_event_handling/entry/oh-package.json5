@@ -1,0 +1,10 @@
+{
+  "name": "f005-event-handling",
+  "version": "1.0.0",
+  "description": "事件处理与手势 - 演示 onClick、onTouch、Gesture、PanGesture 等事件和手势的使用",
+  "main": "",
+  "author": "mqxu",
+  "license": "MIT",
+  "dependencies": {}
+}
+
