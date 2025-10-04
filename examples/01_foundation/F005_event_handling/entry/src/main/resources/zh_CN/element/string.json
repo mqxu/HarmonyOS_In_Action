@@ -1,0 +1,16 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "事件处理与手势模块"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "事件处理与手势演示应用"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "事件与手势"
+    }
+  ]
+}

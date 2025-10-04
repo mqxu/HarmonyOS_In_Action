@@ -35,7 +35,7 @@
 
 | 分类 | 计划案例数 | 已完成 | 覆盖率 |
 |------|-----------|--------|--------|
-| 01-基础入门 | 15 | 4 | 26.7% |
+| 01-基础入门 | 15 | 5 | 33.3% |
 | 02-UI组件 | 25 | 0 | 0% |
 | 03-布局导航 | 12 | 0 | 0% |
 | 04-数据持久化 | 10 | 0 | 0% |
@@ -48,15 +48,16 @@
 | 11-性能优化 | 10 | 0 | 0% |
 | 12-企业功能 | 8 | 0 | 0% |
 | 13-综合项目 | 10 | 0 | 0% |
-| **总计** | **182** | **4** | **2.2%** |
+| **总计** | **182** | **5** | **2.7%** |
 
-**API 覆盖率**: OpenHarmony 20/388 (5.2%) | HMS 5/163 (3.1%) | UI组件 18/120 (15%)
+**API 覆盖率**: OpenHarmony 28/388 (7.2%) | HMS 5/163 (3.1%) | UI组件 18/120 (15%)
 
 **已完成案例**:
 - ✅ F001: Hello World - UIAbility, Text, Button
 - ✅ F002: 状态管理进阶 - @State, @Prop, @Link, @Provide, @Consume
 - ✅ F003: 列表渲染与优化 - List, ForEach, LazyForEach, IDataSource
 - ✅ F004: 自定义组件与复用 - @Component, @Builder, @BuilderParam, Image, Row, Column, Scroll
+- ✅ F005: 事件处理与手势 - onClick, onTouch, onHover, TapGesture, LongPressGesture, PanGesture, SwipeGesture, PinchGesture, RotationGesture, GestureGroup
 
 ---
 
@@ -143,7 +144,7 @@ hdc install entry-default-signed.hap
 | F002 | [状态管理进阶](examples/01_foundation/F002_state_management) | 🟡 中级 | @State, @Prop, @Link, @Provide, @Consume | ✅ 已完成 |
 | F003 | [列表渲染与优化](examples/01_foundation/F003_list_rendering) | 🟡 中级 | List, ForEach, LazyForEach, IDataSource | ✅ 已完成 |
 | F004 | [自定义组件与复用](examples/01_foundation/F004_custom_components) | 🟡 中级 | @Component, @Builder, @BuilderParam | ✅ 已完成 |
-| F005 | [事件处理与手势](examples/01_foundation/F005_event_handling) | 🟡 中级 | onClick, Gesture, PanGesture | ⏳ 规划中 |
+| F005 | [事件处理与手势](examples/01_foundation/F005_event_handling) | 🟡 中级 | onClick, Gesture, PanGesture | ✅ 已完成 |
 | F006 | [动画基础](examples/01_foundation/F006_animations) | 🟡 中级 | animateTo, Animation | ⏳ 规划中 |
 | F007 | [路由与导航](examples/01_foundation/F007_router_navigation) | 🟡 中级 | Router, Navigation | ⏳ 规划中 |
 | F008 | [生命周期管理](examples/01_foundation/F008_lifecycle) | 🟡 中级 | UIAbility, Page Lifecycle | ⏳ 规划中 |
