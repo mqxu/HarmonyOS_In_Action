@@ -1,0 +1,16 @@
+{
+  "string": [
+    {
+      "name": "module_desc",
+      "value": "自定义组件与复用模块"
+    },
+    {
+      "name": "EntryAbility_desc",
+      "value": "自定义组件案例应用入口"
+    },
+    {
+      "name": "EntryAbility_label",
+      "value": "自定义组件"
+    }
+  ]
+}
